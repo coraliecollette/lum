@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+
+{% block body %}
+
+<style>
+label{
+	font-weight:bold;
+}
+
+</style>
+
+	<main>
+		<h1 class="titreproduit">Modification du luminaire</h1>
+
+		<section class="ap">
+			{{ form_start(formProduit) }}
+			{{ form_end(formProduit) }}
+		</section>
+	</main>
+
+{% endblock %}

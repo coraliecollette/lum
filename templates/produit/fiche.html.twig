@@ -1,0 +1,62 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %} {{produit.titre}} - LUM ADM-LIGHT{% endblock %}
+
+
+
+
+{% block body %}
+	<main>
+
+		<section class="ficheproduit">
+        	<article class="photo">
+            	<img src="/images/{{ produit.photo }}" alt="photo-du-luminaire" class="img">
+        	</article>
+			<article class="description">
+				<h1 class="titre">{{produit.titre}}</h1>
+				<p>{{produit.description}}</p>
+				<ul>
+					<li class="list-prod">
+						<strong>Couleur:</strong>{{ produit.couleur}}
+					</li>
+
+					<li class="list-prod">
+                		<strong>Flux:</strong>{{ produit.Flux}} Lm
+					</li>
+
+					<li class="list-prod">
+						<strong>Watt:</strong>{{ produit.Watt}} W
+					</li>
+
+					<li class="list-prod">
+						<strong>Température de couleur:</strong>{{ produit.Tdecouleur}} K
+					</li>
+
+					<li class="list-prod">
+						<strong>Classe:</strong>{{ produit.Classe}}
+					</li>
+
+            		<li class="list-prod">
+						<img src="/images/{{ produit.Energieclass }}" alt="Pas de photo" class="img">
+						<img src="/images/{{ produit.Fonction }}" alt="Pas de photo" class="img">
+					</li>
+				</ul>
+			</article>
+		</section>
+
+		<section class="lien">
+			<a href="{{ path("produit", {"id": produit.id})}}" class="option"><i class="fa fa-reply"></i> Page précédente</a>
+				
+		
+			{% if is_granted("ROLE_ADMIN") %}
+				<a href="{{path("produit_modifier", { "id": produit.id }) }}" class="option" ><i class="fa fa-edit"> Modifier</i></a>
+        		<a href="{{path("produit_supprimer", { id: produit.id }) }}" class="option"><i class="fa fa-times"> Supprimer l'article</i></a>
+			{% endif %}
+		</section>
+
+			
+
+	</main>
+
+{% endblock %}

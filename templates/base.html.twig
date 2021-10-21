@@ -1,19 +1,91 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			{% block title %}LUM ADM-LIGHT
+			{% endblock %}
+		</title>
+		{# Run `composer require symfony/webpack-encore-bundle`
+								           and uncomment the following Encore helpers to start using Symfony UX #}
+		{% block stylesheets %}
+			<link rel="stylesheet" href={{ asset("css/style.css")}}>
+			<link rel="icon" type="image/jpeg" href="images/logo.jpg">
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		{% endblock %}
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+		{% block javascripts %}
+			{#{{ encore_entry_script_tags('app') }}#}
+		{% endblock %}
+	</head>
+	<body>
+		<header>
+			<a href="{{ path("accueil")}}">
+				<figure id="logo"></figure>
+			</a>
+			<nav>
+				<li>
+					<a href="{{ path("produit")}}">Produits
+						<i class="fa fa-caret-down"></i>
+					</a>
+					<ul class="sous">
+						<li>
+							<a href="{{ path("ledintegree") }}">Led intégrée</a>
+						</li>
+						<li>
+							<a href="{{ path("douille") }}">Douille E14/E27</a>
+						</li>
+						<li>
+							<a href="{{ path("lampe") }}">Lampes</a>
+						</li>
+						<li>
+							<a href="{{ path("lampadaire") }}">Lampadaires</a>
+						</li>
+						<li>
+							<a href="{{ path("portemanteaux") }}">Porte-Manteaux</a>
+						</li>
+
+						{# {% for cats in cats.getCategorie %}
+							<li>
+								<a href="{{ path("produit")}}">{{cats.name}}</a>
+							</li>
+												
+						{% endfor %} #}
+					</ul>
+				</li>
+				<li>
+					<a href="#">Écosystème</a>
+				</li>
+				<li>
+					<a href="#">Société</a>
+				</li>
+				<li>
+					<a href="#">Groupe</a>
+				</li>
+				<li>
+					<a href="#plan">Contact</a>
+				</li>
+			</nav>
+		</header>
+		{% block body %}{% endblock %}
+		<footer id="plan">
+			<div class="plan">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10501.227783672224!2d2.3997745!3d48.852357!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xde490c8c04cc91f8!2sAdm%20Light!5e0!3m2!1sfr!2sfr!4v1630422362821!5m2!1sfr!2sfr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+			</div>
+			<div class="adress">
+				<p>
+					<strong>LUM-ADM LIGHT</strong>
+				</p>
+				<p>9 rue des Haies</p>
+				<P>75020 PARIS</P>
+				<p>E-mail :
+					<a href="mailto:contact@lum.fr">contact@lum.fr</a>
+				</p>
+				<p>Tél : 01 45 87 00 00</p>
+			</div>
+		</footer>
+	</body>
 </html>

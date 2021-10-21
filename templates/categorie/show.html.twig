@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categorie
+{% endblock %}
+{% block titre %}Categorie
+{% endblock %}
+
+{% block body %}
+	<main>
+		<h1>Categorie
+			{{ categorie.name }}</h1>
+
+		<p>Nombre de produits dans cette catégorie :
+			{{ categorie.produits|length }}</p>
+
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ categorie.id }}</td>
+				</tr>
+				<tr>
+					<th>Titre</th>
+					<td>{{ categorie.name }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		{# on cré une nouvelle table pour récupérer les produit selon les catégorie #}
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Titre</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			{% for produit in categorie.produits %}
+				<tr>
+					<td>{{ produit.titre}}</td>
+					<td>
+						<a href="{{ path('produit_modifier', {'id': produit.id}) }}">Modifier</a>
+					</td>
+				</tr>
+
+			{% endfor %}
+		</table>
+
+		<a href="{{ path('categorie_index') }}">back to list</a>
+
+		<a href="{{ path('categorie_edit', {'id': categorie.id}) }}">edit</a>
+
+		{{ include('categorie/_delete_form.html.twig') }}
+	</main>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}Supprimer un produit{% endblock %}
+
+{% block body %}
+    <main>
+        <h2 class="titreproduit">Êtes-vous sûr(e) de vouloir supprimer le produit "{{ produit.titre }}" ?</h2>
+        <ul class="ap">
+            <li class="list-group-item">
+                Photo : {{ produit.photo }}
+            </li>
+            <li class="list-group-item">Couleur : {{ produit.couleur }} €</li>
+            <li class="list-group-item">Flux : {{ produit.Flux }}</li>
+            <li class="list-group-item">Watt : {{ produit.Watt }}</li>
+            <li class="list-group-item">Température de couleur : {{ produit.Tdecouleur }}</li>
+            <li class="list-group-item">Classe : {{ produit.Classe }}</li>
+            <li class="list-group-item">Classe énergétique : {{ produit.Energieclass }}</li>
+            <li class="list-group-item">Fonctions : {{ produit.fonction }}</li>
+            <li class="list-group-item">Description : {{ produit.description }}</li>
+
+        </ul>
+
+        <form action="" method="post" class="titretwo">
+            <button type="submit">Confirmer</button>
+            <a href="{{ path("produit") }}" class="titretwo">Annuler</a>
+        </form>
+    </main>
+    
+{% endblock %}

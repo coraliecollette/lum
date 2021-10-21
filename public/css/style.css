@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, p,
+a, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  scroll-behavior: smooth;
+  font-family: 'STIX Two Math', serif; }
+
+header {
+  width: 100%;
+  height: 15vh;
+  position: fixed;
+  background: white;
+  top: 0;
+  z-index: 3;
+  box-shadow: 0 5px 5px grey; }
+  header figure {
+    height: 100%;
+    width: 30%;
+    float: left;
+    text-align: center;
+    padding: 12px;
+    background-image: url(../images/lum-logo.jpg);
+    background-repeat: no-repeat;
+    background-position: center; }
+  header nav {
+    width: 70%;
+    height: 100%;
+    float: right;
+    padding-top: 2%; }
+    header nav li {
+      display: block;
+      float: left;
+      width: 150px;
+      height: 100%;
+      text-align: center;
+      line-height: 60px; }
+      header nav li a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px; }
+        header nav li a:hover {
+          color: #fec33c; }
+      header nav li .sous {
+        display: none;
+        box-shadow: 0px 1px 2px #CCC;
+        background-color: white; }
+        header nav li .sous li {
+          float: none;
+          width: 100%;
+          text-align: center; }
+      header nav li:hover .sous {
+        display: block; }
+
+main {
+  width: 100%;
+  margin-top: 15vh;
+  background: #f3f3f3; }
+  main .connect {
+    border: 2px solid #fec33c;
+    margin: 20vh;
+    padding: 5% 0;
+    display: block;
+    text-align: center;
+    line-height: 60px;
+    background: white; }
+
+.first {
+  margin-top: 15vh;
+  width: 100%;
+  height: 85vh;
+  background: black;
+  /* background: linear-gradient(to right, #0F1317, black); */ }
+  .first h1 {
+    height: 10%;
+    font-size: 35px;
+    width: 100%;
+    color: white;
+    text-align: right;
+    padding-top: 25px;
+    padding-right: 40px; }
+  .first img {
+    display: block;
+    height: 90%;
+    margin: auto; }
+
+.titreproduit {
+  color: #fec33c;
+  padding: 2%;
+  width: 100%;
+  text-align: center;
+  font-size: 50px; }
+
+.ap {
+  display: block;
+  margin-left: 2%;
+  margin-bottom: 2%;
+  line-height: 5vh; }
+  .ap label {
+    margin-right: 1%; }
+
+.ficheproduit {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  width: 70%;
+  margin-left: 10%; }
+  .ficheproduit .photo {
+    flex: 3;
+    border: #838486 2px solid;
+    border-radius: 2%;
+    margin-right: 5%;
+    background: white; }
+    .ficheproduit .photo .img {
+      max-width: 100%;
+      height: 55vh;
+      margin-left: 25%;
+      background: white;
+      object-fit: contain; }
+  .ficheproduit .description {
+    flex: 2; }
+    .ficheproduit .description .titre {
+      color: #fec33c;
+      padding: 2%;
+      margin-top: 5%;
+      width: 100%;
+      font-size: 50px; }
+    .ficheproduit .description p {
+      line-height: 3vh;
+      margin-bottom: 5%;
+      margin-right: -40%; }
+    .ficheproduit .description ul {
+      line-height: 4vh;
+      border: #838486 2px solid;
+      padding-left: 3%;
+      background: white;
+      box-shadow: 12px 12px 2px 1px rgba(110, 109, 109, 0.281);
+      border-radius: 2%; }
+      .ficheproduit .description ul li {
+        list-style: none; }
+        .ficheproduit .description ul li strong {
+          margin-right: 2%; }
+        .ficheproduit .description ul li img {
+          width: 135px;
+          margin-right: 2%; }
+
+.lien {
+  padding-bottom: 3%;
+  margin-left: 5%; }
+  .lien a {
+    text-decoration: none;
+    color: black;
+    margin-right: 2%; }
+    .lien a:hover {
+      color: #fec33c; }
+
+.lien2 {
+  margin-left: 5%;
+  padding-top: 2%;
+  position: fixed; }
+  .lien2 a {
+    text-decoration: none;
+    color: black;
+    margin-right: 2%; }
+    .lien2 a:hover {
+      color: #fec33c; }
+
+.sectionproduit {
+  width: 50%;
+  margin-left: 25%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 3%; }
+  .sectionproduit a {
+    text-decoration: none;
+    min-width: calc(33.33333% - 43px);
+    margin-bottom: 5%;
+    background: white;
+    border-radius: 2%; }
+    .sectionproduit a .cardproduit {
+      border-radius: 2%;
+      background: white;
+      text-align: center; }
+      .sectionproduit a .cardproduit .imageprod {
+        overflow: hidden; }
+        .sectionproduit a .cardproduit .imageprod .cardimg {
+          max-height: 30vh;
+          object-fit: contain;
+          padding: 7% 0;
+          transition: 0.5s; }
+          .sectionproduit a .cardproduit .imageprod .cardimg:hover {
+            transform: scale(1.15);
+            /*grossissement*/ }
+      .sectionproduit a .cardproduit .titreprod {
+        margin: 3% 0; }
+        .sectionproduit a .cardproduit .titreprod .card-title {
+          color: black; }
+          .sectionproduit a .cardproduit .titreprod .card-title:hover {
+            color: #fec33c; }
+
+#plan {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; }
+  #plan .plan {
+    width: 50%; }
+  #plan .adress {
+    font-size: 20px;
+    line-height: 3vh;
+    width: 50%;
+    background: #fec33c;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+
+/*# sourceMappingURL=style.css.map */

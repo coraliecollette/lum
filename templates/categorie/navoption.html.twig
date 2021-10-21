@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Led intégrée - LUM ADM-LIGHT
+{% endblock %}
+
+{% block body %}
+	<style>
+		h1{
+			padding: 1% 0 0 0;
+			text-align: center;
+			color: #838486;
+		}
+	</style>
+
+	<main>
+		<section class="lien2">
+			{% if is_granted("ROLE_ADMIN") %}
+				<a href="{{path("produit_ajouter")}}" class="lien2">
+					<i class="fa fa-plus">
+						Ajouter un produit</i>
+				</a>
+			{% endif %}
+		</section>
+
+		{% for categorie in categories %}
+			<h1>{{ categorie.name }}</h1>
+			<section class="sectionproduit">
+				{% for produit in categorie.produits %}
+					<a href="{{ path("produit_detail", {"id": produit.id})}}">
+						<article class="cardproduit">
+							<div class="imageprod">
+								<img class="cardimg" src="/images/{{produit.photo}}" alt="Card-Image">
+							</div>
+							<div class="titreprod">
+								<h3 class="card-title">{{ produit.titre }}</h3>
+							</div>
+						</article>
+					</a>
+				{% endfor %}
+
+
+			</section>
+		{% endfor %}
+	</main>
+{% endblock %}

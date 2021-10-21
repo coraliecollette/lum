@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block titre %}Categorie :
+	{{categorie.name}}
+{% endblock %}
+{% block title %}Liste des produits de la categorie
+{% endblock %}
+
+{% block body %}
+	<main>
+		<h2>Mots clés</h2>
+		<p>{{ categorie.motscles }}</p>
+
+
+		<h2>Produits:</h2>
+		<div class="card-columns">
+
+			{% for produit in categorie.produits %}
+				{% include "produit/card.html.twig" %}
+			{% else %}
+				{# si la variable est vide #}
+				<h2>
+					Aucun produit pour cette catégorie</h2>
+			{% endfor %}
+		</div>
+
+	</main>
+
+{% endblock %}
