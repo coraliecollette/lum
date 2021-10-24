@@ -1,21 +1,22 @@
 {
   "id": "coralie",
   "api": {
-    "config_vars_prefix": "CORALIE",
-    "config_vars": [
-      "CORALIE_URL"
-    ],
-    "password": "CHANGEME",
-    "sso_salt": "CHANGEME",
     "regions": [
       "us"
     ],
+    "version": "3",
+    "password": "fJsTLdwExizTdUaxWjaKqNc3hvOv8hHn",
     "requires": [],
+    "sso_salt": "WzG1PMxai8sHEhfD2f9qzH30lyOcz2n5",
     "production": {
-      "base_url": "https://myaddon.com/heroku/resources",
-      "sso_url": "https://myaddon.com/sso/login"
+      "sso_url": "https://myaddon.com/sso/login",
+      "base_url": "https://myaddon.com/heroku/resources"
     },
-    "version": "3"
+    "config_vars": [
+      "CORALIE_URL"
+    ],
+    "config_vars_prefix": "CORALIE"
   },
-  "name": "lum"
+  "name": "lum",
+  "$base": 163510119897362
 }
